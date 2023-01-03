@@ -1,0 +1,180 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> student profile </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">	
+	</head>
+    <body>
+        
+        <header id="pageHeader"> <img src="{{ url_for ('static',filename='logoedu.png')}}" style="float:left;" style="float:left; margin:0%;"> KGiSL Educational Institutions <br>
+            Department of physical education and sports<br>
+            <h5 style="font-family:cursive;"> At KG we work while we work and play while we play</h5>
+          </header>
+            <br><br><br><br>
+      
+          <div id="topdiv">
+    <div class="cont1" style="margin-top:30px;">
+        <div style="display:flex; flex-direction:column;">
+            <div><img src="{{ url_for ('static',filename='g1.png')}}"></div>
+            <div><img src="{{ url_for ('static',filename='g2.png')}}"></div>
+            <div><img src="{{ url_for ('static',filename='g3.png')}}"></div>
+            <div><img src="{{ url_for ('static',filename='g4.jpg')}}"></div>
+                
+        </div>
+        <div align="center">
+            <div align="center" class="border">
+                <div class="header">
+                    <h1 class="word" style="margin-top:4px;">Student Profile</h1>
+                </div></br>
+        
+        <h2 class="word">
+            <form action="{{ url_for('register') }}" method="POST" autocomplete="off">
+            <div class="msg">{{ msg }}</div>
+            <label for="rollnumber" style="color:white;font-size: 15px;">  Roll number :</label>
+            <input type="text" id="rollnumber" name="rollnumber" placeholder="Enter your rollnumber" class="textbox"> <br>
+            <label for="password" style="color:white;font-size: 15px;">  Password :</label>
+            <input type="password" id="password" name="password" placeholder="create password" class="textbox"> <br>
+            <label for="name" style="color:white;font-size: 15px;">   Full Name :</label>
+            <input type="text" id="username" name="username"  placeholder="Enter Your Name" class="textbox"/></br>
+            <label for="email" style="color:white;font-size: 15px;">  College mailid :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              <input type="email" id="emailid" name="emailid"  placeholder="Enter Your  college mailid" class="textbox"/><br>
+            <label for="dept" style="color:white;font-size: 15px;">  Department :</label>   
+            <input type="text" id="dept" name="department"  placeholder="Enter Your department" class="textbox"/><br>
+
+            <label for="dept" style="color:white;font-size: 15px;" >  Section  :</label> 
+                <select  name="section"  class="textbox" style="color:white;font-style: oblique;
+                font-weight: bold;" >Select your Section
+                    <option  value="null" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 10px;font-size: 12px"> Select your section </option>
+                    <option value="A" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> A </option>
+                    <option  value="B" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> B </option>
+                    <option value="C" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> C </option>
+                </select><br>
+                
+                <label for="mobn1" style="color:white;font-size: 15px; margin-left:5px;">  Mobile Number :</label>
+                <input type="text"  name="mobn1" placeholder="+91xxxxxxxxxx" class="textbox"/><br>
+                <label for="whatsappnum" style="color:white;font-size: 15px;">  Whatsapp Number :</label>
+                <input type="number" id="whatsappnum" name="whatsappnum" placeholder=" Whatsapp number" class="textbox"/><br>
+                <label for="parentnum" style="color:white;font-size: 15px;">  Parent's number :</label>
+                <input type="number" id="parentnum" name="parentnum" placeholder=" Parent's mobilenumber" class="textbox"/><br>
+
+                <label for="batch"  style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;margin-left:1px;">  Select your Batch :</label>
+                <select name="batch" class="textbox" style="color:white;font-style: oblique;
+                font-weight: bold;margin-left:1px;">
+                    <option name="batch" value="null" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;"> Select your Batch </option>
+                    <option name="batch" value="2019" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> 2019 </option>
+                    <option name="batch" value="2020" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> 2020 </option>
+                    <option name="batch" value="2021" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> 2021 </option>
+                    <option name="batch" value="2022" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> 2022 </option>
+                </select><br>
+
+                <label  float="left" style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;"> Gender :</label> 
+                <input type="radio"  name="gender" value="Male" > <span style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;font-size:13px;"> Male</span>
+                <input type="radio" id="female" name="gender" value="Female"> <span style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;font-size:13px;"> Female </span> <br>
+
+                <label  style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;;"> Admission Mode :</label> 
+                
+                <input type="radio" name="amode" value="Regular" ><span style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;font-size:13px;"> Regular </span>
+                        
+                <input type="radio" id="lateral" name="amode" value="lateral"><span style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;font-size:13px;"> lateral </span>  <br>
+
+                <label style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;margin-left:50px"> Mode of stay :</label> 
+                <input type="radio"  name="smode" value="Day Scholar" > <span style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;font-size:13px;"> Day Scholar </span>
+                <input type="radio" id="Hosteler" name="smode" value="Hosteler"> <span style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;font-size:13px;"> Hosteler </span> <br><br>
+
+                <label  style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;"> choose your game :</label> 
+                <button type="button" class="collapsible textbox" style="background-color:#2B65EC;">Games +</button> 
+               
+                <select name="prefered_game" class="textbox  no-display" style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;">
+                    <option name="null" value="null" class="textbox" style="color: mediumblue;;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> Select your Game </option>
+                    <option name="game" value="Cricket" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> Cricket </option>
+                    <option name="game" value="Volleyball" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> Volleyball </option>
+                    <option name="game" value="Basketball" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> Basketball </option>
+                    <option name="game" value="Football" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> Football </option>
+                    <option name="game" value="Handball" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> Handball </option>
+                    <option name="game" value="Shuttle" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> Shuttle </option>
+                    <option name="game" value="Table Tennis" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> Table Tennis </option>
+                </select><br><br>
+
+                <label  style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;"> Athletics :</label> 
+                <button type="button" class="collapsible textbox" style="background-color:#2B65EC;">Athletics +</button> 
+                <select name="prefered_game" class="textbox no-display" style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;">
+                    <option name="null" value="null" class="textbox" style="color:blue;;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> Select your field event </option>
+                    <option name="game" value="100 Meters" class="textbox" style="color:blue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> 100 Meters</option>
+                    <option name="game" value="200 Meters" class="textbox" style="color:blue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> 200 Meters  </option>
+                    <option name="game" value="400 Meters" class="textbox" style="color:blue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> 400 Meters </option>
+                    <option name="game" value="800 Meters" class="textbox" style="color:blue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> 800 Meters </option>
+                    <option name="game" value="1500 Meters" class="textbox" style="color:blue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> 1500 Meters </option>
+                    <option name="game" value="Long Distance" class="textbox" style="color:blue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> Long Distance </option>
+                    <option name="game" value="High Jump" class="textbox" style="color:blue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> High Jump </option>
+                    <option name="game"alue="High Jump" class="textbox" style="color:blue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> Long Jump </option>
+                    <option name="game" value="High Jump" class="textbox" style="color:blue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> Tripple Jump </option>
+                    <option name="game" value="High Jump" class="textbox" style="color:blue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> Pole vault </option>
+                </select><br><br>
+                <script>
+                    var coll = document.getElementsByClassName("collapsible");
+                    var i;
+                                        for (i = 0; i < coll.length; i++) {
+                      coll[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var content = this.nextElementSibling;
+                        if (content.style.display === "block") {
+                          content.style.display = "none";
+                        } else {
+                          content.style.display = "block";
+                        }
+                      });
+                    }
+                    </script>
+           <a class="bottom" href="{{ url_for('sendotp')}}"><span style="color:white;">Register</span> </a> &nbsp;&nbsp;
+</div> <br>
+                    </form>
+    </div>
+</body>
+</html>
+                    
+                    
+                   
+                

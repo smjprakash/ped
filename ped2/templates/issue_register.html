@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Login </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">	
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">	
+	</head>
+    <body>
+        <header id="pageHeader"> <img src="{{ url_for ('static',filename='logoedu.png')}}" style="float:left;" margin:0%;> KGiSL Educational Institutions <br>
+            Department of physical education and sports<br>
+            <h5 style="font-family:cursive;"> At KG we work while we work and play while we play</h5>
+          </header>
+            <br><br><br><br>
+        <div id="topdiv">
+            <div align="center">
+                <div align="center" class="border">
+                    <div class="header">
+                            <h1 class="word" style="margin-top:4px;">Issue Register</h1>
+                        </div></br>
+                
+                
+                    <form action="{{ url_for('issue_register') }}" method="POST" autocomplete="off">
+                        <label for="item_name" > Item Name :</label>
+                        <input type="text" id="item_name" name="item_name" class="textbox" style="color:white;font-style: oblique;
+                        font-weight: bold;font-size: 15px;"><br><br>
+                        <label for="quantity" > Quantity :</label>
+                        <input type="number" id="quantity" name="quantity" class="textbox" style="color:white;font-style: oblique;
+                        font-weight: bold;font-size: 15px;"><br> <br>
+                        <label  style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;"> Issued by   :</label> 
+                <select name="issued_by" class="textbox" style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;">
+                    <option name="issued_by" value="KGCAS PED" class="textbox" style="color: mediumblue;;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> KGCAS PED</option>
+                    <option name="issued_by" value="KGKITE PED" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> KGKITE PED </option>
+                    <option name="issued_by" value="KGIIM PED" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> KGIIM PED </option>
+                    <option name="issued_by" value="KGCHS PED" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> KGCHS PED </option>
+                </select><br><br>
+                <label for="dateissue" style="color:white;font-size: 15px;"> Date of Issue :</label>
+                <input type="text" id="dateissue" name="dateissue"  class="textbox"> <br><br>
+                <label  style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;"> Received by</label>  
+                <input type="text"  name="received_by"  class="textbox"> <br>  <br>     
+                <label for="datereturned" style="color:white;font-size: 15px;">  Date Returned :</label>
+                <input type="text" id="datereturned" name="datereturned"  class="textbox"> <br><br>
+                
+                <input type="submit" class="bottom" style="font-size: 15px;margin-left:190px;"> <br><br>
+                </form>
+               
+            </body>
+                </html>
+

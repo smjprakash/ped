@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='sty1.css')}}">	
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">	
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+<body>
+   
+  <div class="sidebar">
+    <div class="logo-details">
+      <img src="{{ url_for ('static',filename='user.jpg')}}">&nbsp;&nbsp;&nbsp;&nbsp;
+      <span class="logo_name">PED</span>
+    </div>
+      <ul class="nav-links">
+        <li>
+          <a href="#" class="active">
+            <i class='bx bx-grid-alt' ></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{url_for('index')}}">
+            <i class='bx bx-home' ></i>
+            <span class="links_name">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-box' ></i>
+            <span class="links_name">Inventory</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-list-ul' ></i>
+            <span class="links_name">Orders list</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-pie-chart-alt-2' ></i>
+            <span class="links_name">Events</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{url_for('issue_details')}}">
+            <i class='bx bx-coin-stack' ></i>
+            <span class="links_name">Issue register</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{url_for('practice')}}">
+            <i class='bx bx-calendar-check' ></i>
+            <span class="links_name"> Practice schedule </span>
+          </a>
+        </li>
+        <li>
+          <a href="{{url_for('players')}}">
+            <i class='bx bx-user' ></i>
+            <span class="links_name">Players</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class='bx bx-message' ></i>
+            <span class="links_name">Messages</span>
+          </a>
+        </li>
+        
+        <li>
+          <a href="{{url_for('attendance')}}">
+            <i class='bx bx-cog' ></i>
+            <span class="links_name">Attendance</span>
+          </a>
+        </li>
+       
+        <li>
+          <a href="{{url_for('index')}}">
+            <i class='bx bx-log-out'></i>
+            <span class="links_name">Log out</span>
+          </a>
+        </li>
+      </ul>
+  </div>
+  <section class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Dashboard</span>
+      
+      
+      <div>
+        <img src="{{ url_for ('static',filename='logoedu.png')}}" style="width:140px;height:70px; margin-left:750px;" >
+        
+        </div>
+      </div>
+    </nav>
+
+    <div class="home-content">
+      <div class="overview-boxes">
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Invoice</div>
+            <div class="number">40,876</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Up from yesterday</span>
+            </div>
+          </div>
+          <i class='bx bx-cart-alt cart'></i>
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Upcoming Events</div>
+            <div class="number">Cricket Tournament</div>
+            <div class="indicator">
+              
+              <span class="text">Date : 20-09-2022</span>
+            </div>
+          </div>
+          <i class="fa fa-calendar" aria-hidden="true"></i>
+        </div>
+        <div class="box">
+          <div class="right-side">
+            <div class="box-topic">Pending Orders </div>
+            <div class="number">$12,876</div>
+            <div class="indicator">
+              <i class='bx bx-up-arrow-alt'></i>
+              <span class="text">Up from yesterday</span>
+            </div>
+          </div>
+          <i class='bx bx-' ></i>
+        </div>
+        </div>
+ 
+      <div class="sales-boxes" style="width:100%;">
+        <div class="recent-sales box">
+          <div class="title"><center>Item Issue details</center></div>
+          <div class="sales-details">
+            <div class="button">
+              <a href="{{url_for('issue_details')}}">check</a>
+            
+            <table  cellpadding="10" cellspacing="10" style="border-collapse: collapse;text-align: center; border-spacing: 25px;">
+              <tr class="details" style="font-size: 18px; padding:30px;">
+                <th> 
+                  Item name
+                </th>
+                <th> 
+                  Date of Issue
+                </th>
+                <th> 
+                  Issued By
+                </th>
+                <th> 
+                  Issued to
+                </th>
+                <th> 
+                  Quantity
+                </th>
+                <th> 
+                  Date Returned
+                </th>
+                <th> 
+                  Condition
+                </th>
+                
+                </tr>   
+                {{ rows }}
+                   
+              {% for items in value %}
+              {{ items }}
+              <tr>
+                  <td> {{ items.item_name }} </td>
+                   <td> {{ items.date_of_issue }} </td>
+                   <td> {{ items.issued_by }} </td>
+                   <td> {{ items.received_by }} </td>
+                   <td> {{ items.quantity}} </td>
+                   <td> {{ items.return_date }} </td>
+  
+                  </tr>
+                  {% endfor %}
+                </table></center><br><br>
+                </div>
+          </div>
+          <div class="button">
+            <a href="{{url_for('issue_details')}}">See All</a>
+          </div>
+        </div>
+      
+        <div class="sales-boxes" style="width:100%;">
+          <div class="recent-sales box">
+          <div class="title"><center>Today's Practice</center></div>
+          <div class="button">
+            <a href="{{url_for('staff_dashboard')}}">check</a>
+          </div>
+          <table  style="border-collapse: collapse;text-align: center; border-spacing: 25px;">
+            <tr class="details" style="font-size: 18px; padding:30px;">
+              <th> 
+                Date_of_practice
+              </th>
+              <th> 
+                Team_name
+              </th>
+              <th> 
+
+                Gender
+              </th> 
+              <th>
+                College_name
+              </t1>
+              <th>
+                Coach
+              </th>
+              <th>
+                Start_time
+              </th>
+              <th> 
+                End_time
+              </th>
+              </tr>      
+            {% for items in data %}
+            <tr style="font-size: 18px;">
+                <td> {{ items.date_of_practice }} </td>
+                 <td> {{ items.team_name }} </td>
+                 <td> {{ items.gender }} </td>
+                 <td> {{ items.college_name }} </td>
+                 <td> {{ items.coach }} </td>
+                 <td> {{ items.start_time }} </td>
+                 <td> {{ items.end_time }} </td>
+
+                </tr>
+                {% endfor %}
+              </table>
+              <div class="button">
+                <a href="{{url_for('practice')}}">See All</a>
+              </div>
+    </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+   let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".sidebarBtn");
+sidebarBtn.onclick = function() {
+  sidebar.classList.toggle("active");
+  if(sidebar.classList.contains("active")){
+  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
+}else
+  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+}
+ </script>
+
+</body>
+</html>
+

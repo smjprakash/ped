@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> New Schedule </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">	
+	</head>
+    <body>
+        
+        <header id="pageHeader"> <img src="{{ url_for ('static',filename='logoedu.png')}}" style="float:left;" style="float:left; margin:0%;"> KGiSL Educational Institutions <br>
+            Department of physical education and sports<br>
+            <h5 style="font-family:cursive;"> At KG we work while we work and play while we play</h5>
+          </header>
+            <br><br><br><br>
+      
+          <div id="topdiv">
+            <div align="center">
+                <div align="center" class="border">
+                    <div class="header">
+                        <h1 class="word" style="margin-top:4px;">New Schedule</h1>
+                    </div></br>
+            
+            <h2 class="word">
+                <form action="{{ url_for('newschedule') }}" method="POST" autocomplete="off">
+                    <div class="msg">{{ msg }}</div>
+                <label for="dp" style="color:white;font-size: 15px;"> Date of Practice :</label>
+                <input type="text" id="dp" name="dp" placeholder="Enter the practice date" class="textbox"> <br>
+                <label for="team_name" style="color:white;font-size: 15px;">  Team Name :</label>
+                <input type="text" id="team_name" name="team_name" placeholder="Enter the team name" class="textbox"> <br>
+                
+                <label for="gender" style="color:white;font-size: 15px;"> Gender :</label>
+                <input type="radio"  id="gender" name="gender" value="Boys" > <span style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;font-size:13px;"> Boys</span>
+                <input type="radio" id="gender" name="gender" value="Girls"> <span style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;font-size:13px;"> Girls </span> <br>
+                
+                <label  style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;"> College Name</label> 
+                <select name="college_name" class="textbox" style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;">
+                    <option name="college_name" value="KGCAS" class="textbox" style="color: mediumblue;;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> KGCAS</option>
+                    <option name="college_name" value="KGKITE" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> KGKITE </option>
+                    <option name="college_name" value="KGIIM" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> KGIIM </option>
+                    <option name="college_name" value="KGCHS" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> KGCHS </option>
+                </select><br>
+                <label  style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;"> Coach</label> 
+                <select name="coach" class="textbox" style="color:white;font-style: oblique;
+                font-weight: bold;font-size: 15px;">
+                    <option name="coach" value="KGCAS PED" class="textbox" style="color: mediumblue;;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> KGCAS PED</option>
+                    <option name="coach" value="KGKITE PED" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> KGKITE PED </option>
+                    <option name="coach" value="KGIIM PED" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> KGIIM PED </option>
+                    <option name="coach" value="KGCHS PED" class="textbox" style="color:mediumblue;font-style: oblique;
+                    font-weight: bold;font-size: 15px;"> KGCHS PED </option>
+                </select><br>
+                <label for="st" style="color:white;font-size: 15px;"> Start Time :</label>
+                <input type="text" id="st" name="st" placeholder="Enter the practice start time AM/PM" class="textbox"> <br>
+                <label for="et" style="color:white;font-size: 15px;"> End Time :</label>
+                <input type="text" id="et" name="et" placeholder="Enter the practice start time AM/PM" class="textbox"> <br><br>          
+                <input type="submit" class="bottom" style="font-size: 15px;margin-left:190px;">  <br>
+
+            </form>
+            <button type="submit" class="bottom" style="font-size: 15px;margin-left:5px;" ><a  href="{{url_for('staff_dashboard')}}"><span style="color:white;">staff dashboard </span> </a> &nbsp;&nbsp;</button>
+					
+</button>       
+ 
+            </div>
+            </body>
+            </html>
+                          
+                

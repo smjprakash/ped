@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		<meta charset="UTF-8">
+		<title> Login </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">	
+	</head>
+    <body>
+        <header id="pageHeader"> <img src="{{ url_for ('static',filename='logoedu.png')}}" style="float:left;" style="float:left; margin:0%;"> KGiSL Educational Institutions <br>
+            Department of physical education and sports<br>
+            <h5 style="font-family:cursive;"> At KG we work while we work and play while we play</h5>
+          </header><br>
+            <div align="center">
+            <div align="center" class="border">
+                <div class="header">
+                    <h1 class="word" style="margin-top:4px;">Enter OTP</h1>
+                </div></br>
+                <h2 class="word">
+                    <form action="{{url_for('sendotp')}}" method="POST">
+                        <input type="text" id="number" name="number"  placeholder="Enter your OTP" class="textbox"/></br><br>
+                        
+                         <center><a class="bottom" href="" style="margin-right:100px;"><span style="color:white;font-size:20px;">submit</span> </a> </center> <br>
+                         <center><a class="bottom" href="" style="margin-right:100px;"><span style="color:white;font-size:20;">Resend Otp</span> </a> </center>
+                         
+
+            </form>
+    </div> <br>
+    </body>
+</html>

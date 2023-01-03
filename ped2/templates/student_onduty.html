@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> New Schedule </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='sty1.css') }}">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">	
+        
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+	</head>
+    <body>
+        
+        <header id="pageHeader"> <img src="{{ url_for ('static',filename='logoedu.png')}}" style="float:left;" style="float:left; margin:0%;"> KGiSL Educational Institutions <br>
+            Department of physical education and sports<br>
+            <h5 style="font-family:cursive;"> At KG we work while we work and play while we play</h5>
+          </header>
+            <br><br><br><br>
+            
+            
+            <div class="sales-boxes">
+              <div class="recent-sales box">
+              <div class="title">Onduty Details</div>
+              
+              <table  style="text-align: center;">
+                <tr class="details" style="font-size: 18px; padding:10px;">
+                  <th> 
+                    Student Id
+                  </th>
+                  <th> 
+                    Student Name
+                  </th>
+                  <th> 
+                    Applied Date
+                  </th> 
+                  <th> 
+                    Onduty Date
+                  </th> 
+                  <th>
+                    reason for Onduty
+                  </t1>
+                  <th>
+                    Approval Status
+                  </th>
+                  <th>
+                    Approved By
+                  </th>
+                  
+                  </tr>      
+                {% for items in data %}
+                <tr style="font-size: 20px;">
+                    <td style="width:50px;"> {{ items.student_id }} </td>
+                     <td> {{ items.student_name }} </td>
+                     <td style="width:125px;"> {{ items.applied_date }} </td>
+                     <td style="width:130px;"> {{ items.onduty_date }} </td>
+                     <td style="width:70x;"> {{ items.reason }} </td>
+                     <td> {{ items.status }} </td>
+                     <td> {{ items.approved_by }} </td>
+                        
+                    </tr>
+                    {% endfor %}
+                  </table>
+                 </div>
+                 </div>
+                  </div>
+                  <div class="button">
+                    <a href="#">Apply for OD</a></div>
+        </body>
+        </html>
+                  
+      

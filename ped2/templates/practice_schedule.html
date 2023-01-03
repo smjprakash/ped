@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Practice </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">	
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">	
+        <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='sty1.css')}}">	
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css')}}">	
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+        table , th, td
+     {
+        border:2px solid black;
+       border-collapse: collapse;
+       
+        background-color:dodgerblue;
+        margin-top:60px;
+        color:white;
+        text-align:center;
+     }
+     </style>
+	</head>
+    <body>
+        <header id="pageHeader"> <img src="{{ url_for ('static',filename='logoedu.png')}}" style="float:left;" margin:0%;> KGiSL Educational Institutions <br>
+            Department of physical education and sports<br>
+            <h5 style="font-family:cursive;"> At KG we work while we work and play while we play</h5>
+        </header>
+        <br><br><br><br>
+        {{ msg }}
+        <table border="1" cellpadding="10" cellspacing="10">
+            <tr>
+              <th> 
+                Date_of_practice
+              </th>
+              <th> 
+                Team_name
+              </th>
+              <th> 
+                Gender
+              </th>
+              <th> 
+                College_name
+              </th>
+              <th> 
+                Coach
+              </th>
+              <th> 
+                Start_time
+              </th>
+              <th> 
+                End_time
+              </th>
+              </tr>      
+            {% for items in data %}
+            <tr>
+                <td> {{ items.date_of_practice }} </td>
+                 <td> {{ items.team_name }} </td>
+                 <td> {{ items.gender }} </td>
+                 <td> {{ items.college_name }} </td>
+                 <td> {{ items.coach }} </td>
+                 <td> {{ items.start_time }} </td>
+                 <td> {{ items.end_time }} </td>
+
+                </tr>
+                {% endfor %}
+              </table>
+        <div class="button">
+        
+      </div><br>
+      <a href="{{url_for('staff_dashboard')}}" style="border:2px solid blue;height:50px;border-radius: 5px;text-align:center;margin-left:1px;">Go to Dashboard</a>
+      <a href="{{url_for('newschedule')}}" style="border:2px solid blue;height:50px;border-radius: 5px;text-align:center;">Create New Schedule</a>
+      
+    </body>
+</html>

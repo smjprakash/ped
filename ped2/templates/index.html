@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title> KGiSl PED</title>
+</head>
+
+<body style="height:2500px">
+  {%include 'base.html' %}
+  <nav class="navbar navbar-expand-sm bg-primary navbar-dark sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{{ url_for('student') }}"><i class="fas fa-sign-in-alt" ></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Student</a>
+      <a class="navbar-brand" href="{{ url_for('staff') }}"><i class="fas fa-sign-in-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp; staff</a>
+      <a  class="navbar-brand" href="{{ url_for('gallery') }}"><i class="fas fa-images"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Gallery</a>
+      <a  class="navbar-brand" href="#"><i class="fas fa-sign-out-alt"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Logout</a>
+    </div>
+  </nav>
+  <br>
+
+  
+  <div class="row">
+  <p class="marquee">
+    <span>Upcoming Events &nbsp;</span>
+  </p>
+  <p class="marquee marquee2">
+    <span> &nbsp;&nbsp; Interzonal Kho-Kho matches starts from 09-01-2023 &nbsp;</span>
+  </p></div><br>
+     
+      
+    
+  
+      <div id="img" style="display:flex;flex-direction: row;">
+        <div class="box1"> <img src= "{{ url_for ('static',filename='ab.jpg')}}"> </div>
+        <div class="box1"> <img src= "{{ url_for ('static',filename='ab1.jpg')}}"> </div>
+        <div class="box1"> <img src= "{{ url_for ('static',filename='ab5.jpg')}}"> </div>
+        <div class="box1"> <img src= "{{ url_for ('static',filename='ab3.jpg')}}"> </div>
+      </div>
+      <div style="margin:20px;">
+        <h3> Sports for Excellence</h3><br>
+
+<p style="font-size: 15px;"> College has always made sports as part of the curriculum on the basis of the attitude that <span style="color:blueviolet;font-weight: bolder;font-style: oblique;"> ‘FIT IN BODY IS FIT IN MIND’</span>. A good environment is essential to inspire the students into sports activity. In this regard we are proud to say that our ground is spacious with aesthetic appearance. </p>
+      
+   <div>
+    <h3> vision </h3>
+    <p>Department of Physical Education and Sports will broaden, enhance, and develop its teaching, education, research, and service activities which are equal to norms and standards of Indian Universities.
+    </p>
+   </div>
+   <div>
+    <h3> Mission </h3>
+    <ul>
+      <li>Department of Physical Education and Sports aims at total education through the physical, intellectual, emotional and social development of people in order to promote healthier, happier and more successful people</li>
+      <li> The department mainly functions in education, teaching, research and public service</li>
+      <li>The department will create respectful students who value their health and fitness and practice healthful activities throughout their lives</li>
+      <li>The department will encourage students to take part in sport - whether it is recreational or competitive.</li>
+      <li> The department will deliver 'Outstanding' lessons that inspire and motivate all students regardless of their ability</li>
+    </ul>
+   </div>
+  </div>
+</div>
+ 
+  <div class="row" style="margin:20px;">
+    <div class="col-sm-4"> <h2>Indoor Games </h2>
+    <ul>
+      <li>Table tennis</li>
+      <li>Chess</li>
+      <li>Carrom</li>
+    </ul>
+  </div>
+    <div class="col-sm-4 "><h2>Outdoor Games</h2>
+
+    
+      <ul>
+        <li>Football</li>
+        <li>basketball</li>
+        <li>Volleyball</li>
+        <li>Throwball</li>
+        <li>Kho-Kho</li>
+        <li>Cricket</li>
+        <li>Kabadi</li>
+        <li>Ball Badminton</li>
+        <li>Handball</li>
+        <li>Shuttle</li>
+        </ul></div>
+
+    <div class="col-sm-4"> <h2> Athelics </h2>
+
+      <ul>
+        <li>Atheltic Track</li>
+        <li>Long Distance</li>
+        <li>High Jump, long Jump, Tripple Jump</li>
+        <li>Pole vault</li>
+        <li>Discuss Throw</li>
+        <li>Shot Put</li>
+        <li>Javelin Throw</li>
+        <li>Walking</li>
+        <li>Hurdle</li>
+        
+      </ul></div>    </div>
+  </div> 
+  
+  <div class="row">
+    <div class="col-sm-2" style="margin-left:5px;"><h2 style="text-align:center;"> Sports arena </h2>
+      <img src="{{url_for ('static',filename='track3.jpg')}}" width="400px" height="300px;">
+    </div>
+  
+  <div class="col-sm-3"> <h2> Our achivements </h2>
+  <p> Won the interzonal volleyball men's tournament</p>
+  <p> Won the interzonal volleyball men's tournament</p>
+</div></div>
+<div class="container-fluid row">
+  <div class="col-sm-3">
+      <span style="font-size: large;font-weight:bolder;">Contact us</span><br><br>
+      <address> 
+        KGiSL Campus, 365, <br>
+        Thudiyalur Road, <br>
+        Saravanampatti, Coimbatore - 641035 <br>
+        Phone: 9787576263 <br>
+        email:murugan.m@kgkite.ac.in
+      </address>
+    </div>
+    
+    <div class="col-sm-3">
+      <h3 style="color:white; font-size:large;font-weight:bolder;">  Location </h3>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.425887932692!2d76.99577411428916!3d11.081602656517855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f7ed4cdc41c9%3A0xe122eaa6b1d41735!2sKGiSL!5e0!3m2!1sen!2sin!4v1663320693928!5m2!1sen!2sin" width="200" height="200" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="col-sm-3"> 
+      <a href="#top"><img src="{{url_for ('static',filename='uparrow.png')}}" float="right;"></a>
+    </div>
+  </div>
+
+</body>
+</html>
+
+

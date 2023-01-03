@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Issue Details </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">	
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">	
+        <meta charset="UTF-8">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='sty1.css')}}">	
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css')}}">	
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+        table , th, td
+     {
+        border:2px solid black;
+       border-collapse: collapse;
+       
+        background-color:dodgerblue;
+        margin-top:60px;
+        color:white;
+        text-align:center;
+     }
+     </style>
+	</head>
+    <body>
+        <header id="pageHeader"> <img src="{{ url_for ('static',filename='logoedu.png')}}" style="float:left;" margin:0%;> KGiSL Educational Institutions <br>
+            Department of physical education and sports<br>
+            <h5 style="font-family:cursive;"> At KG we work while we work and play while we play</h5>
+        </header>
+        <br><br><br><br>
+        <table border="1" cellpadding="10" cellspacing="10">
+            <tr>
+              <th> 
+                Item name
+              </th>
+              <th> 
+                Date of Issue
+              </th>
+              <th> 
+                Issued By
+              </th>
+              <th> 
+                Issued to
+              </th>
+              <th> 
+                Quantity
+              </th>
+              <th> 
+                Date Returned
+              </th>
+              
+              </tr>      
+            {% for items in value %}
+            <tr>
+                <td> {{ items.item_name }} </td>
+                 <td> {{ items.date_of_issue }} </td>
+                 <td> {{ items.issued_by }} </td>
+                 <td> {{ items.received_by }} </td>
+                 <td> {{ items.quantity}} </td>
+                 <td> {{ items.return_date }} </td>
+
+                </tr>
+                {% endfor %}
+              </table>
+        <div class="button">   
+            <a href="{{url_for('staff_dashboard')}}" style="border:2px solid blue;width:200px;border-radius: 5px;text-align:center;">Go to dashboard</a>
+      </div>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+/* (A) GLOBAL */
+* {
+  height: 100%
+  box-sizing: border-box;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+.c1 {
+  display: flex;
+  min-height: 100vh;
+  padding: 0; margin-top: 5px;
+}
+
+/* (B) SIDEBAR */
+/* (B1) SIDEBAR ITSELF */
+#pgside {
+  float:left;
+  width: 200px;
+  transition: width 0.2s;
+  background: dodgerblue;
+;
+  Display :block;
+}
+
+/* (B2) USER OR BRANDING */
+#pgside #pguser {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 5px;
+}
+#pgside #pguser img {
+  width: 50px;
+  margin-right: 5px;
+  border-radius: 50%
+}
+
+#pageheader1{
+  padding:10px;
+text-align:center;
+color:blue;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+font-weight:bold;
+font-size:larger;
+}
+
+
+/* (B3) SIDEBAR ITEMS */
+#pgside, #pgside a { color: #fff; }
+#pgside a {
+  display: block;
+  padding: 20px;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+}
+#pgside a.current { background:  #7B68EE;}
+#pgside a:hover { background:#191970; }
+
+/* (B4) SIDEBAR ICONS & TEXT */
+#pgside i.ico, #pgside i.txt { font-style: normal; }
+#pgside i.ico {
+  font-size: 1.1em;
+  margin-right: 10px;
+}
+
+/* (B5) SMALL SCREEN TRANSFORMATION */
+@media screen and (max-width:768px) {
+  #pgside { width: 70px; }
+  #pgside #pguser { justify-content: left; }
+  #pgside a {
+    text-align: center;
+    padding: 20px 0;
+  }
+  #pgside i.ico {
+    font-size: 1.5em;
+    margin-right: 0;
+  }
+  #pgside i.txt { display: none; }
+}
+
+/* (C) MAIN CONTENTS */
+#pgmain {
+  flex-grow: 1;
+  padding: 20px;
+  background: #f2f2f2;
+}
